@@ -1,0 +1,336 @@
+<?php
+/* Template Name: All Competitions Template */
+
+get_header();
+$user_details = wp_get_current_user();
+$userid = $user_details->ID;
+$selected_charity = get_user_meta( $userid, 'charity',true);
+$chrtiy = "";
+?>
+<style>
+	.margin
+	{
+		margin-bottom: 38px;
+	}
+	body{
+	width: 100%;
+	}
+	
+	.min_entry{
+		font-weight: bolder;
+	}
+</style>
+<div class=' section_competition'>
+    <div class='col-sm-12 text-center'>
+        <div class='m-20'>
+        <h1>  ON GOING COMPETITIONS </h1>
+        </div>
+    </div>	
+	<div class='col-sm-12'>
+        <div class='m-20 select_category'>
+       <select class='cateogry' name="category_filter">
+	    <option>Select Category</option>
+		<?php
+			if(isset($_GET['category'])){
+				$id = $_GET['category'];
+			}
+                $taxonomy     = 'raffle-category';
+                $orderby      = 'name';  
+                $show_count   = 0;      // 1 for yes, 0 for no
+                $pad_counts   = 0;      // 1 for yes, 0 for no
+                $hierarchical = 1;      // 1 for yes, 0 for no  
+                $title        = '';  
+                $empty        = 0;
+
+                $args = array(
+                    'taxonomy'     => $taxonomy,
+                    'orderby'      => $orderby,
+                    'show_count'   => $show_count,
+                    'pad_counts'   => $pad_counts,
+                    'hierarchical' => $hierarchical,
+                    'title_li'     => $title,
+                    'hide_empty'   => $empty
+                );
+                $all_categories = get_categories( $args );
+                $i  = 1 ; 
+		  
+                foreach ($all_categories as $cat) {
+                if($cat->category_parent == 0 ) {
+                    $category_id = $cat->term_id; 
+					if($id == $category_id){
+					  $select = "selected";
+					}else{
+						$select = "";
+					}
+                    //if($cat->slug != 'uncategorized'){ 
+					
+                    echo '<option '.$select.' value="'.$category_id.'">'. $cat->name .'</option>';
+                    //}
+                    $i++;
+                }       
+                }
+                ?>
+	   
+		</select>
+ 
+        </div>
+    </div>
+	
+	<div class='compettions'>
+	
+<?php
+
+/**
+ * Setup query to show the ‘services’ post type with ‘8’ posts.
+ * Output the title with an excerpt.
+ */
+ 
+ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+ 
+  $i = 1; $i_color_counter = 1; $bgcolor = 1;
+  if(isset($_GET['category'])){
+		$args = array(  
+			'post_type' => 'raffles',
+			'post_status' => 'publish',
+			'posts_per_page' => 6,
+			'tax_query' => array(
+					array(
+						'taxonomy' => 'raffle-category', //double check your taxonomy name in you dd 
+						'field'    => 'id',
+						'terms'    => $_GET['category'],
+					),
+				   ),
+			'paged' => $paged,
+			'orderby' => 'title', 
+			'order' => 'DESC', 
+		);
+  }else{		
+    $args = array(  
+        'post_type' => 'raffles',
+        'post_status' => 'publish',
+        'posts_per_page' => 6, 
+		'paged' => $paged,
+        'orderby' => 'title', 
+        'order' => 'DESC', 
+    );
+  }
+
+    $loop = new WP_Query( $args ); 
+   if($loop->have_posts()) {
+    while ( $loop->have_posts() ) : $loop->the_post(); 
+	//print_r(get_post_meta( get_the_ID()));
+	   
+	       $website=  get_post_meta(get_the_ID(),'select_website',true); 
+  	 
+	
+	$diff = abs(time() - strtotime(get_the_date('j F Y', get_the_ID())));
+					
+	$min = floor($diff / (60*60*24));
+	   
+	//echo $i ;
+	if($i > 2 ){
+		echo "</div>";
+		$i = 1;
+		$new_row = "<div class='row' style='margin-bottom:40px'>";
+	}else{
+		$new_row = "";
+		if($i == 1){
+			$new_row = " <div class='row' style='margin-bottom:40px'>";
+		}
+	}
+	
+	switch($bgcolor){
+		case 1 :
+		$bg = "style='background:#EC8783'";
+			$bgcolor_raffle = "#EC8783";
+		break;
+		case 2 :
+		$bg = "style='background:#1CD6CD'";
+			$bgcolor_raffle = "#1CD6CD";
+		break;
+		case 3 :
+		$bg = "style='background:#D5BDA3'";
+			$bgcolor_raffle = "#D5BDA3";
+		break;
+		case 4 :
+		$bg = "style='background:#2A9DF4'";
+			$bgcolor_raffle = "#2A9DF4";
+		break;
+	}
+	 if($bgcolor == 4){
+		 $bgcolor  = 1;
+	 }
+	
+	if($i_color_counter == 1){
+		$margin_left = "";
+		$classs = "margin";
+		 $i_color_counter++;
+	}else{
+		$margin_left = "style='margin-left:26px'";
+		$i_color_counter = 1;
+		$classs = "";
+	}
+	echo $new_row;
+	   
+	$qty = "";
+	if(isset($_SESSION['cart'])){	
+		//$chrtiy =  $_SESSION['cart'][get_the_ID()]['charity'] ;
+	if(array_key_exists(get_the_ID(), $_SESSION['cart'])){
+            $text = "Added";
+		    $class = "";
+			$qty  = $_SESSION['cart'][get_the_ID()]['quantity'] ;
+		    $chrtiy =  $_SESSION['cart'][get_the_ID()]['charity'] ;
+     }else{
+			$text = "Add to cart";
+		    $class = "btn_cart";
+		$exp ="instant_buy";
+	}
+	}else{
+	
+		$text = "Add to cart";
+		    $class = "btn_cart";
+		$exp ="instant_buy";
+	}
+?>
+   
+        <div class='span6 competiton_thumb competiton_thumb2 <?php echo $classs;?>'>
+            <div class='inner-section' <?php echo $bg;?>>
+                <div class='inner first-child'>
+                   <a href="<?php echo get_permalink(get_the_ID());?>"> <div class='heading text-center' style='background-image:url(<?php echo get_template_directory_uri().'/images/path9.png'?>);background-position:bottom;background-size:108%'>
+                      <h3> <?php the_title(); ?> </h3>
+					   </div></a>
+                    <div class='description'>
+                        <p style="font-weight: bold;text-align:center"> <?php echo get_post_meta( get_the_ID(), 'short_description', true ); ?></p>
+                    </div>
+                    <div class='qty_buttons'>
+                        <div class='icon_inner hidden-phone' style='border-right:1px solid #fcafa6'>
+                            <img width='32px' src ="<?php echo get_template_directory_uri().'/images/days.png'?>">
+                            <p> <?php echo ((get_post_meta( get_the_ID(), 'days', true ) - $min) < 0 ) ? 0 : get_post_meta( get_the_ID(), 'days', true ) - $min ; ?>  Days </p>
+                        </div>
+                        <?php if((get_post_meta( get_the_ID(), 'days', true ) - $min) <= 0){
+						$tittle = 'title="Expired"  data-placement="top"';
+						$class = "expired";
+	                    $exp = "expired";
+						$disabled = "disabled";
+						}else{
+							$tittle = "";
+							$disabled = "";
+							$exp = "instant_buy";
+						} ?>
+                        <div class='icon_inner'>
+                            <p> Quantity </p>
+                            <button class='minus_btn' <?php echo $disabled;?> data-min="<?php echo get_post_meta( get_the_ID(), 'minimum_entry', true ); ?>"> - </button> <span class='quantity'>  <?php echo ($qty != "" ) ? $qty : get_post_meta( get_the_ID(), 'minimum_entry', true ); ?> </span> <button class='add_btn' <?php echo $disabled;?>> + </button>
+                        </div>
+                       
+                    </div>
+
+                     <div class='cart_buttons'>
+                        <button class='<?php echo $class;?>' <?php // echo $disable;?> data-color="<?php echo $bgcolor_raffle;?>" <?php echo $tittle;?> id='btn_cart' data-price="<?php echo get_post_meta( get_the_ID(), 'price_of_single_ticket', true ); ?>" data-charity='<?php echo ($selected_charity == "")? $chrtiy : $selected_charity ;?>' data-raffle='<?php echo get_the_ID();?>'> <?php echo $text;?> <span class='loader'></span> </button>
+                         <button class='<?php echo $exp;?>' data-color="<?php echo $bgcolor_raffle;?>" data-price="<?php echo get_post_meta( get_the_ID(), 'price_of_single_ticket', true ); ?>" data-raffle='<?php echo get_the_ID();?>'  <?php //echo $disable;?> <?php echo $tittle;?> > Buy <span class='loader'></span></button>
+                    </div>
+                   
+                </div>
+                <div class='inner'>
+                  <a href="<?php echo get_permalink(get_the_ID());?>">  <img src='<?php echo wp_get_attachment_url(get_post_meta( get_the_ID(), 'raffle_thumbnail_image', true )) ;?>' style='height:100%' width='100%'></a>
+                </div>
+            </div>
+           <?php 
+			
+			/*if( get_post_meta( get_the_ID(), 'days', true ) > 0)
+			if( (get_post_meta( get_the_ID(), 'days', true ) - $min) <= 0){
+				echo  "<div class='conner_section'>
+                <p> <span class='min_entry'> Awaiting Withdrawal </span> </p>
+            </div>";
+			}else */
+				if((get_post_meta( get_the_ID(), 'days', true ) - $min) == 1 && (get_post_meta( get_the_ID(), 'days', true ) - $min) > 0){
+					echo "<div class='conner_section'>
+                <p> <span class='min_entry'>Ending today </span> </p>
+            </div>";
+			}else if((get_post_meta( get_the_ID(), 'days', true ) - $min) <= 7 && (get_post_meta( get_the_ID(), 'days', true ) - $min) > 0){
+					echo "<div class='conner_section'>
+                <p> <span class='min_entry'> Ending soon </span> </p>
+            </div>";
+			}
+			
+			
+			?>
+        </div>
+    
+	
+	<?php 
+	if($i > 2 ){
+		$new_row = "</div>";
+		$i = 1;
+	}else{
+		$new_row = "";
+		$i++;
+	}
+	$bgcolor ++;
+	 echo $new_row;
+	
+	endwhile;   ?>
+  
+	
+</div>
+
+    <div class='row' style='margin-top:40px'>
+        <div class='text-center'><?php 
+	
+			$total_pages = $loop->max_num_pages;
+
+			if ($total_pages > 1){
+
+				$current_page = max(1, get_query_var('paged'));
+
+				echo paginate_links(array(
+					'base' => get_pagenum_link(1) . '%_%',
+					'format' => '/page/%#%',
+					'current' => $current_page,
+					'total' => $total_pages,
+					//'prev_text'    => __('« prev'),
+					//'next_text'    => __('next »'),
+				));
+			} ?> 
+		  
+		   </div>
+    </div>
+ <?php }else{ ?>
+
+	<div class="container" style="min-height:400px;text-align:center">
+		<h4> No Raffles found!</h4>
+	</div>
+	
+		
+<?php } wp_reset_postdata(); ?>
+
+
+  
+
+</div>
+</div>
+
+<!-- Modal -->
+  <div class="modal fade modalwidth" id="myModal_charity" role="dialog">
+    <div class="modal-dialog modal-sm">
+     <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="myModalLabel">Choose Charity</h3>
+	  </div>
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+			<p> 5% of all tickets purchases go towards your chosen  Charity </p>
+			<div class="body_charity" style='text-align:center'>
+				
+			</div>	
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
+		  <button type="button"  class="btn btn-success   pull-right" id='ok_add_to_cart'>Ok</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+<?php get_footer();?>

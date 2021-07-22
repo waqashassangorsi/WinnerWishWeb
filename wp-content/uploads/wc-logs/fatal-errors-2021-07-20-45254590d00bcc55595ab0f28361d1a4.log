@@ -1,0 +1,3 @@
+2021-07-20T15:06:14+00:00 CRITICAL Uncaught (Status 400) (Request req_QYKbjvtKEh08g8) The Checkout Session's total amount due cannot be zero in `payment` mode. Please see https://stripe.com/docs/currencies#minimum-and-maximum-charge-amounts
+  thrown in /var/www/vhosts/winnerswish.com/httpdocs/wp-content/themes/swatch-child-theme/libs/stripe/lib/Exception/ApiErrorException.php on line 38
+

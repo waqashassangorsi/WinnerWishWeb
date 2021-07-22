@@ -1,0 +1,55 @@
+0.1     - (9th April 2014)
+        - initial release
+
+0.2     - (11th April 2014)
+        - added build system
+        - added codesniffer
+        - added phpdoc
+
+1.0.0   - (22nd July 2014)
+        - Stable version used by Omega & Angle
+
+1.1.0   - (17th September 2014)
+        - Added new colour picker that supports RGBA
+        - Added postfix option to slider
+        - Added new font option for ena stacks
+
+1.2.0   - (30th September 2014)
+        - Updated jQuery UI Smoothness theme
+        - Remove old select 2 and tidy js and css
+        - Added Colourbox and Theme Installer
+        - Added theme customiser
+        - Removed register sidebars
+        - Changed OxygennaOptions to be more modular and allow other pages to use it
+        - Fixed tooltips on option pages
+
+1.2.1   - 18th December 2014
+        - changed textdomain to get loaded by get_stylesheet_directory to allow child theme languages
+
+1.2.2   - 9th January 2015
+        - Added Import/Export options
+
+1.2.3   - 26th January 2015
+        - fixed bug in import export
+
+1.2.6   - 5th October 2015
+        - Fixed version check
+        - Fixed coding standards
+
+1.2.7   - 6th October 2015
+        - Make sure customizer and options only loaded when needed
+        - Added descriptions to customiser
+        - Added multiple checkbox to customiser
+
+1.2.8   - 11th January 2016
+        - Fix headings in WordPress 4.4
+
+1.2.9   - Fixed bug where image background was buggy on hover, for options with image.
+
+1.2.10  - Replaced deprecated function add_object_page for Wordpress 4.5
+
+1.2.11  - Fix upload option when using store=id
+
+1.2.12  - Singe service shortcode fix
+
+1.2.13  - Fix category and tags options for WooCommerce

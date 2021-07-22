@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<wpml-config>
+    <admin-texts>
+        <key name="swatch-options">
+            <key name="logo_text"/>
+            <key name="blog_readmore"/>
+            <key name="blog_title"/>
+            <key name="blog_subtitle"/>
+            <key name="404_title"/>
+            <key name="404_content"/>
+            <key name="portfolio_related_title"/>
+            <key name="map_overlay_title_1"/>
+            <key name="map_overlay_content_1"/>
+            <key name="map_overlay_title_2"/>
+            <key name="map_overlay_content_2"/>
+            <key name="twitter_text"/>
+        </key>
+    </admin-texts>
+</wpml-config>

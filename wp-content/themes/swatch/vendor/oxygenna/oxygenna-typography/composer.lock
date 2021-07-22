@@ -1,0 +1,77 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "1ecd8934d2aab356e14b5fb220717575",
+    "packages": [
+        {
+            "name": "oxygenna/oxygenna-ant-theme-build",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:oxygenna/oxygenna-ant-theme-build.git",
+                "reference": "b45df6a9239df78db1c8067219e21a30bf161bf0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "license": [
+                "ThemeForest"
+            ],
+            "authors": [
+                {
+                    "name": "John Langan",
+                    "email": "john.langan@oxygenna.com"
+                }
+            ],
+            "description": "Oxygenna's Theme Builder",
+            "time": "2014-09-24 07:45:47"
+        },
+        {
+            "name": "oxygenna/oxygenna-php-standards",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:oxygenna/oxygenna-php-standards.git",
+                "reference": "ecabcf5f4a242763bafe13e62295dfc59aebb2f4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "license": [
+                "ThemeForest"
+            ],
+            "authors": [
+                {
+                    "name": "John Langan",
+                    "email": "john.langan@oxygenna.com"
+                }
+            ],
+            "description": "Oxygenna's PHP Coding Standards",
+            "time": "2014-04-10 12:19:33"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": [
+
+    ],
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}

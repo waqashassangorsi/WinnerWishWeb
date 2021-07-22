@@ -1,0 +1,26 @@
+{
+    "name": "oxygenna/oxygenna-shortcode-generator",
+    "description": "Oxygenna's Shortcode Generator Framework",
+    "license": "ThemeForest",
+    "authors": [
+        {
+            "name": "harconst",
+            "email": "harconst@oxygenna.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "oxygenna/oxygenna-php-standards": "1.0.*",
+        "oxygenna/oxygenna-ant-theme-build": "1.0.*"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@bitbucket.org:oxygenna/oxygenna-php-standards.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@bitbucket.org:oxygenna/oxygenna-ant-theme-build.git"
+        }
+    ]  
+}

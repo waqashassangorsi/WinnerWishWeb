@@ -1,0 +1,6 @@
+2021-07-07T04:43:25+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) in /var/www/vhosts/winnerswish.com/httpdocs/wp-content/themes/swatch-child-theme/functions.php on line 425
+
+2021-07-07T04:46:12+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) in /var/www/vhosts/winnerswish.com/httpdocs/wp-content/themes/swatch-child-theme/functions.php on line 425
+
+2021-07-07T04:46:12+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) in /var/www/vhosts/winnerswish.com/httpdocs/wp-content/themes/swatch-child-theme/functions.php on line 425
+

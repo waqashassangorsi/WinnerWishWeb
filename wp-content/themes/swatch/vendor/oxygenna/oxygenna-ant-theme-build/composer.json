@@ -1,0 +1,17 @@
+{
+    "name": "oxygenna/oxygenna-ant-theme-build",
+    "description": "Oxygenna's Theme Builder",
+    "license": "ThemeForest",
+    "authors": [
+        {
+            "name": "John Langan",
+            "email": "john.langan@oxygenna.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}

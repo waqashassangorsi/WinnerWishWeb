@@ -1,0 +1,266 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ${copyright}
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ${theme} Frontend Translation File 1.9.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-15 11:55+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: artifacts/wordpress/build/tag.php:15
+msgid "Tag"
+msgstr ""
+
+#: artifacts/wordpress/build/archive.php:15
+msgid "Day"
+msgstr ""
+
+#: artifacts/wordpress/build/archive.php:19
+msgid "Month"
+msgstr ""
+
+#: artifacts/wordpress/build/archive.php:23
+msgid "Year"
+msgstr ""
+
+#: artifacts/wordpress/build/archive.php:27
+msgid "Blog"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:104
+msgid "Primary Navigation"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:105
+msgid "Account Navigation"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:270
+msgid "Pingback:"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:270
+msgid "(Edit)"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:291
+msgid "Reply"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:347
+msgid "YOUR NAME *"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:348
+msgid "YOUR EMAIL *"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:352
+#, php-format
+msgid "Required fields are marked %s"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:355
+msgid "YOUR MESSAGE"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:356
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:357
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:363
+msgid "Add your comment"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:364
+msgid "Leave a Reply"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:365
+msgid "Cancel reply"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:366
+msgid "Add comment"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:375
+msgid "Cancel"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:1099
+msgid "SEARCH"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:1123
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:1124
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:1245
+msgid "Next page"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:1246
+msgid "Previous page"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:1363
+#, php-format
+msgid "Search Results: &ldquo;%s&rdquo;"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:1365
+#, php-format
+msgid "&nbsp;&ndash; Page %s"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/frontend.php:1455
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/options/widgets/swatch_twitter.php:20
+msgid "Displays you latest tweets"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/options/widgets/swatch_twitter.php:21
+msgid "Twitter Feed"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/options/widgets/swatch_twitter.php:30
+#, php-format
+msgid ""
+"Please configure your Twitter username for the <a href=\"%s\">Twitter "
+"Widget</a>."
+msgstr ""
+
+#: artifacts/wordpress/build/inc/options/widgets/default_overrides.php:23
+msgid "Recent Posts"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/options/widgets/default_overrides.php:82
+msgid "Archives"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/options/widgets/default_overrides.php:90
+msgid "Select Month"
+msgstr ""
+
+#: artifacts/wordpress/build/inc/options/shortcodes/shortcodes.php:642
+#: artifacts/wordpress/build/inc/options/shortcodes/shortcodes.php:1011
+msgid "all"
+msgstr ""
+
+#: artifacts/wordpress/build/comments.php:31
+msgid "&larr; Older"
+msgstr ""
+
+#: artifacts/wordpress/build/comments.php:32
+msgid "Newer &rarr;"
+msgstr ""
+
+#: artifacts/wordpress/build/comments.php:43
+msgid "Comments are closed."
+msgstr ""
+
+#: artifacts/wordpress/build/author.php:46
+msgid "Posts by "
+msgstr ""
+
+#: artifacts/wordpress/build/search.php:15
+msgid "Search"
+msgstr ""
+
+#: artifacts/wordpress/build/partials/content-portfolio-single.php:64
+msgid "Previous"
+msgstr ""
+
+#: artifacts/wordpress/build/partials/content-portfolio-single.php:69
+msgid "Next"
+msgstr ""
+
+#: artifacts/wordpress/build/partials/content-link.php:47
+#: artifacts/wordpress/build/partials/content-gallery.php:63
+#: artifacts/wordpress/build/partials/content-audio.php:44
+#: artifacts/wordpress/build/partials/content-search.php:34
+#: artifacts/wordpress/build/partials/content.php:36
+#: artifacts/wordpress/build/partials/content-video.php:65
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: artifacts/wordpress/build/partials/post-related.php:41
+msgid "Related Posts"
+msgstr ""
+
+#: artifacts/wordpress/build/partials/post-extras.php:33
+msgid "No comments"
+msgstr ""
+
+#: artifacts/wordpress/build/partials/post-extras.php:33
+msgid "1 comment"
+msgstr ""
+
+#: artifacts/wordpress/build/partials/loop.php:41
+msgid "Nothing Found"
+msgstr ""
+
+#: artifacts/wordpress/build/partials/loop.php:47
+msgid "Sorry, no posts were found for this category."
+msgstr ""
+
+#: artifacts/wordpress/build/partials/loop.php:50
+msgid "Sorry, no posts found in that timeframe"
+msgstr ""
+
+#: artifacts/wordpress/build/partials/loop.php:53
+msgid "Sorry, no posts from that author were found"
+msgstr ""
+
+#: artifacts/wordpress/build/partials/loop.php:56
+#, php-format
+msgid "Sorry, no posts were tagged with  \"%1$s\""
+msgstr ""
+
+#: artifacts/wordpress/build/partials/loop.php:59
+#, php-format
+msgid "Sorry, no search results were found for  \"%1$s\""
+msgstr ""
+
+#: artifacts/wordpress/build/partials/loop.php:62
+msgid "Sorry, nothing found"
+msgstr ""
+
+#: artifacts/wordpress/build/partials/content-search.php:39
+msgid "by "
+msgstr ""
+
+#: artifacts/wordpress/build/partials/content-search.php:45
+msgid "on "
+msgstr ""
+
+#: artifacts/wordpress/build/partials/content-404.php:23
+msgid "Home Page"
+msgstr ""

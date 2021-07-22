@@ -1,0 +1,28 @@
+0.1     -
+        - initial release
+
+1.0.0   - (22nd July 2014)
+        - Stable version used by Omega & Angle
+
+1.1.0
+        - removed option pages ( should come from theme )
+        - refactored Class (name & singleton) and added boostrap oxygenna-typography.php to match other modules
+        - added extra ajax get_font call
+        - Google fonts now added to a list
+        - Font families that contain spaces are now wrapped in single quotes
+
+1.1.1 - (18th September 2014)
+        - Fixed elements in system / typekit fonts
+
+1.1.2 - (22nd January 2015)
+        - URL encoding fixes
+
+1.1.3 - (15th April 2015)
+        - Fixed a bug in system fonts
+
+1.1.4 - (28th July 2015)
+        - Better error reporting for update Google FOnts
+        - Added check for DNS lookup before update google fonts
+
+1.1.5 - (28th July 2015)
+        - Fixed bug in error message

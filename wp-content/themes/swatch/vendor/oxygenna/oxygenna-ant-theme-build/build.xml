@@ -1,0 +1,25 @@
+<project>
+    <import file="modules/import.xml"/>
+    <import file="modules/utils.xml"/>
+    <import file="modules/html.xml"/>
+    <import file="modules/wordpress.xml"/>
+    <import file="modules/update.xml"/>
+    <import file="modules/metrics.xml"/>
+    <import file="modules/angularjs.xml"/>
+    <import file="modules/bower.xml"/>
+
+    <target name="build">
+        <!-- build HTML -->
+        <antcall target="html"></antcall>
+        <antcall target="wordpress"></antcall>
+    </target>
+
+    <target name="dev-build">
+        <!-- build HTML -->
+        <antcall target="html-build"></antcall>
+
+        <!-- build wordpress -->
+        <antcall target="update-design"></antcall>
+        <antcall target="wordpress-build"></antcall>
+    </target>
+</project>
